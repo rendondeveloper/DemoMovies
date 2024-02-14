@@ -3,5 +3,8 @@
 
   "homePageTabMovies" : "Películas",
   "homePageTabMap" : "Map",
-  "homePageTabProfile" : "Perfil"
+  "homePageTabProfile" : "Perfil",
+
+  "mapPageAppBatTitle" : "Cines",
+  "mapPageLoaderText" : "Cargando mapas"
 }

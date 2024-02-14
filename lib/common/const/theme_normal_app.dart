@@ -7,8 +7,6 @@ final themeNormal = ThemeData(
   useMaterial3: true,
   scaffoldBackgroundColor: background,
   appBarTheme: const AppBarTheme(
-      foregroundColor: primaryDarkColor,
-      backgroundColor: primaryDarkColor,
       toolbarTextStyle: TextStyle(
           color: text,
           fontWeight: FontWeight.normal),
