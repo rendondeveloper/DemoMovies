@@ -6,5 +6,8 @@
   "homePageTabProfile" : "Perfil",
 
   "mapPageAppBatTitle" : "Cines",
-  "mapPageLoaderText" : "Cargando mapas"
+  "mapPageLoaderText" : "Cargando mapas",
+
+  "moviesPageAppBarTitle" : "Películas",
+  "moviesPageEmptyStateTextMessage" : "No encontramos péliculas."
 }

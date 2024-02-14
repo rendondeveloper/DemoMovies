@@ -27,3 +27,7 @@ const Color onErrorColor = Color(0xffFF5722);
 const Color onCardColor = Color(0xff383838);
 const Color onShadow = Color(0x25747474);
 
+const tokenApi = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NTYyMTc1ZTA5MWM4NjJmZmRiNWU4ZDQ1M2I3YTRhZiIsInN1YiI6IjVjYTY1NjNmYzNhMzY4NjE0MjE2Zjk2YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oJ-VqvAvIo3zV6kKIhx7M0GTA5vqd2XWTPjUfq2dLSU";
+const configurationToken = "Bearer $tokenApi";
+const baseUrl = "api.themoviedb.org";
+const baseImage = "https://image.tmdb.org/t/p/original";
