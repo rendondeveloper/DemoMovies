@@ -13,7 +13,7 @@ class MapProvider extends StateNotifier<MapState> {
     Future.wait([_requestPermission(), _getLocations()]);
   }
 
-  Future<bool?> _requestPermission() async {
+  Future<void> _requestPermission() async {
     final location.PermissionStatus hasPermission =
         await _location?.requestPermission() ??
             location.PermissionStatus.denied;

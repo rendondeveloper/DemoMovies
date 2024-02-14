@@ -20,7 +20,6 @@ mixin _$MapState {
   Set<Marker> get markers => throw _privateConstructorUsedError;
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
-  double get zoom => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MapStateCopyWith<MapState> get copyWith =>
@@ -33,11 +32,7 @@ abstract class $MapStateCopyWith<$Res> {
       _$MapStateCopyWithImpl<$Res, MapState>;
   @useResult
   $Res call(
-      {bool loadMap,
-      Set<Marker> markers,
-      double latitude,
-      double longitude,
-      double zoom});
+      {bool loadMap, Set<Marker> markers, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -57,7 +52,6 @@ class _$MapStateCopyWithImpl<$Res, $Val extends MapState>
     Object? markers = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? zoom = null,
   }) {
     return _then(_value.copyWith(
       loadMap: null == loadMap
@@ -76,10 +70,6 @@ class _$MapStateCopyWithImpl<$Res, $Val extends MapState>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      zoom: null == zoom
-          ? _value.zoom
-          : zoom // ignore: cast_nullable_to_non_nullable
-              as double,
     ) as $Val);
   }
 }
@@ -93,11 +83,7 @@ abstract class _$$MapStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool loadMap,
-      Set<Marker> markers,
-      double latitude,
-      double longitude,
-      double zoom});
+      {bool loadMap, Set<Marker> markers, double latitude, double longitude});
 }
 
 /// @nodoc
@@ -115,7 +101,6 @@ class __$$MapStateImplCopyWithImpl<$Res>
     Object? markers = null,
     Object? latitude = null,
     Object? longitude = null,
-    Object? zoom = null,
   }) {
     return _then(_$MapStateImpl(
       loadMap: null == loadMap
@@ -134,10 +119,6 @@ class __$$MapStateImplCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
-      zoom: null == zoom
-          ? _value.zoom
-          : zoom // ignore: cast_nullable_to_non_nullable
-              as double,
     ));
   }
 }
@@ -149,8 +130,7 @@ class _$MapStateImpl extends _MapState {
       {this.loadMap = false,
       final Set<Marker> markers = const <Marker>{},
       this.latitude = 0.0,
-      this.longitude = 0.0,
-      this.zoom = 20.0})
+      this.longitude = 0.0})
       : _markers = markers,
         super._();
 
@@ -172,13 +152,10 @@ class _$MapStateImpl extends _MapState {
   @override
   @JsonKey()
   final double longitude;
-  @override
-  @JsonKey()
-  final double zoom;
 
   @override
   String toString() {
-    return 'MapState(loadMap: $loadMap, markers: $markers, latitude: $latitude, longitude: $longitude, zoom: $zoom)';
+    return 'MapState(loadMap: $loadMap, markers: $markers, latitude: $latitude, longitude: $longitude)';
   }
 
   @override
@@ -191,13 +168,12 @@ class _$MapStateImpl extends _MapState {
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.zoom, zoom) || other.zoom == zoom));
+                other.longitude == longitude));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, loadMap,
-      const DeepCollectionEquality().hash(_markers), latitude, longitude, zoom);
+      const DeepCollectionEquality().hash(_markers), latitude, longitude);
 
   @JsonKey(ignore: true)
   @override
@@ -211,8 +187,7 @@ abstract class _MapState extends MapState {
       {final bool loadMap,
       final Set<Marker> markers,
       final double latitude,
-      final double longitude,
-      final double zoom}) = _$MapStateImpl;
+      final double longitude}) = _$MapStateImpl;
   const _MapState._() : super._();
 
   @override
@@ -223,8 +198,6 @@ abstract class _MapState extends MapState {
   double get latitude;
   @override
   double get longitude;
-  @override
-  double get zoom;
   @override
   @JsonKey(ignore: true)
   _$$MapStateImplCopyWith<_$MapStateImpl> get copyWith =>

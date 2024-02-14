@@ -9,7 +9,6 @@ class MapState with _$MapState {
     @Default(<Marker>{}) Set<Marker> markers,
     @Default(0.0) double latitude,
     @Default(0.0) double longitude,
-    @Default(20.0) double zoom,
   }) =_MapState;
   const MapState._();
 }
