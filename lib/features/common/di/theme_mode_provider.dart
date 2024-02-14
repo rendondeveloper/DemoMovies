@@ -1,1 +1,1 @@
-import 'package:demo_movies_map_profile/common/const/navigation_paths.dart';import 'package:flutter/material.dart';import 'package:go_router/go_router.dart';import 'package:riverpod/riverpod.dart';final isDarkModeProvider = StateProvider<bool>((ref)  {  return false;});
+import 'package:riverpod/riverpod.dart';final isDarkModeProvider = StateProvider<bool>((ref)  {  return false;});

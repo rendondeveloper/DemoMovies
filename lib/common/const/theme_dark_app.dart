@@ -4,7 +4,8 @@ import 'package:util_commons/utils/commons/dimens_app.dart';
 import 'configuration_app.dart';
 
 final themeDark = ThemeData(
-    scaffoldBackgroundColor: onBackground,
+    //useMaterial3: true,
+    scaffoldBackgroundColor: background,
     appBarTheme: const AppBarTheme(
         backgroundColor: onPrimaryDarkColor,
         titleTextStyle: TextStyle(

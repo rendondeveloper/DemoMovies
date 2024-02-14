@@ -1,2 +1,7 @@
 {
-  "appName": "Demo Movies Map Profile"}
+  "appName": "Demo Movies Map Profile",
+
+  "homePageTabMovies" : "Películas",
+  "homePageTabMap" : "Map",
+  "homePageTabProfile" : "Perfil"
+}

@@ -1,0 +1,1 @@
+import 'package:demo_movies_map_profile/features/home/framework/presentation/model/home_state.dart';import 'package:demo_movies_map_profile/features/home/framework/presentation/provider/home_provider.dart';import 'package:riverpod/riverpod.dart';final homeProvider =    StateNotifierProvider<HomeProvider, HomeState>((ref) {  return HomeProvider();});

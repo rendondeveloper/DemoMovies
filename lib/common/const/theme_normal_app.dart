@@ -4,9 +4,14 @@ import 'package:util_commons/utils/commons/dimens_app.dart';
 import 'configuration_app.dart';
 
 final themeNormal = ThemeData(
+  useMaterial3: true,
   scaffoldBackgroundColor: background,
   appBarTheme: const AppBarTheme(
+      foregroundColor: primaryDarkColor,
       backgroundColor: primaryDarkColor,
+      toolbarTextStyle: TextStyle(
+          color: text,
+          fontWeight: FontWeight.normal),
       titleTextStyle: TextStyle(
           color: text,
           fontWeight: FontWeight.normal)),
@@ -31,7 +36,7 @@ final themeNormal = ThemeData(
     brightness: Brightness.light,
     primary: primaryColor,
     onPrimary: primaryDarkColor,
-    secondary: secondaryText,
+    secondary: text,
     onSecondary: secondaryText,
     error: errorColor,
     onError: errorColor,

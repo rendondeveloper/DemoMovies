@@ -1,5 +1,4 @@
 import 'package:demo_movies_map_profile/common/const/theme_dark_app.dart';
-import 'package:demo_movies_map_profile/common/utils/context_extension.dart';
 import 'package:demo_movies_map_profile/features/common/di/navigation_provider.dart';
 import 'package:demo_movies_map_profile/features/common/di/theme_mode_provider.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,8 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navigation = ref.watch(navigationProvider);
-    final themeMode = ref.watch(isDarkModeProvider);
+    final isDarkMode = ref.watch(isDarkModeProvider);
+
 
     return MaterialApp.router(
         supportedLocales: const [
@@ -31,7 +31,7 @@ class MainApp extends ConsumerWidget {
         debugShowCheckedModeBanner: false,
         darkTheme: themeDark,
         theme: themeNormal,
-        themeMode: themeMode ? ThemeMode.dark : ThemeMode.light,
+        themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
         routerConfig: navigation);
   }
 }

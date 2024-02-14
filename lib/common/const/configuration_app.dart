@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-const Color primaryDarkColor = Color(0xffFFFFFF);
-const Color primaryColor = Color(0xffFFFFFF);
-const Color text = Color(0xffFFFFFF);
+const Color primaryDarkColor = Color(0xff212121);
+const Color primaryColor = Color(0xffFF5722);
+const Color text = Color(0xff212121);
 const Color icons = Color(0xffFFFFFF);
 const Color accentColor = Color(0xffFF5722);
 const Color onSplashAccentColor = Color(0xfff8dfd2);
