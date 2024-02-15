@@ -9,12 +9,12 @@ import 'package:http/http.dart' as http;
 
 class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
   @override
-  Future<CategoriesDto> getCategories() async {
+  Future<CategoriesDto> getRemoteCategories() async {
     var url = Uri.https(baseUrl, categoriesPath);
     var response = await http.get(
       url,
       headers: {
-        HttpHeaders.authorizationHeader: configurationToken,
+        HttpHeaders.authorizationHeader: "Bearer $tokenApi",
       },
     );
 
@@ -54,10 +54,6 @@ class MoviesRemoteDataSourceImpl implements MoviesRemoteDataSource {
       },
     );
 
-
-    //old https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=popularity.desc&page=1
-    //platform https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
-    //new      https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc
     final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
 
     print("responseJson getMovies -> $responseJson");

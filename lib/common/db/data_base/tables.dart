@@ -1,0 +1,1 @@
+const dataBaseName = "demo_app_movies.db";const String categoriesTable = "Categories";const String categoriesIdentifier = "identifier";const String categoriesName = "name";

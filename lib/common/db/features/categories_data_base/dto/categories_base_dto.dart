@@ -1,0 +1,1 @@
+class CategoriesBaseDto {  final num identifier;  final String name;  CategoriesBaseDto({    required this.identifier,    required this.name,  });}

@@ -1,4 +1,8 @@
+import 'package:demo_movies_map_profile/features/common/di/data_base_provider.dart';
+import 'package:demo_movies_map_profile/features/movies/data/data_source/categories_local_data_source.dart';
 import 'package:demo_movies_map_profile/features/movies/data/data_source/movies_remote_data_source.dart';
+import 'package:demo_movies_map_profile/features/movies/data/mapper/categories_dto_to_catories_base_dto_mapper.dart';
+import 'package:demo_movies_map_profile/features/movies/data/mapper/catories_base_dto_to_categories_state_mapper.dart';
 import 'package:demo_movies_map_profile/features/movies/data/mapper/catories_dto_to_categories_state_mapper.dart';
 import 'package:demo_movies_map_profile/features/movies/data/mapper/movies_dto_to_movies_state_mapper.dart';
 import 'package:demo_movies_map_profile/features/movies/data/movies_repository.dart';
@@ -6,10 +10,21 @@ import 'package:demo_movies_map_profile/features/movies/domain/model/categories_
 import 'package:demo_movies_map_profile/features/movies/domain/model/movies_state.dart';
 import 'package:demo_movies_map_profile/features/movies/domain/use_cases/get_categories_use_cases.dart';
 import 'package:demo_movies_map_profile/features/movies/domain/use_cases/get_movies_use_cases.dart';
+import 'package:demo_movies_map_profile/features/movies/framework/implemention/data/data_source/categories_local_data_source_impl.dart';
 import 'package:demo_movies_map_profile/features/movies/framework/implemention/data/data_source/movies_remote_data_source_impl.dart';
 import 'package:demo_movies_map_profile/features/movies/framework/presentation/provider/catgories_provider.dart';
 import 'package:demo_movies_map_profile/features/movies/framework/presentation/provider/movies_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final categoriesLocalDataSourceImplProvider =
+    Provider<CategoriesLocalDataSource>((ref) => CategoriesLocalDataSourceImpl(
+        ref.watch(categoriesBaseDataBaseImplProvider)));
+
+final categoriesBaseDtoToCategoriesStateMapperProvider =
+    Provider((ref) => CategoriesBaseDtoToCategoriesStateMapper());
+
+final categoriesDtoToCategoriesBaseDtoMapperProvider =
+    Provider((ref) => CategoriesDtoToCategoriesBaseDtoMapper());
 
 final moviesRemoteDataSourceProvider =
     Provider<MoviesRemoteDataSource>((ref) => MoviesRemoteDataSourceImpl());
@@ -24,6 +39,9 @@ final moviesRepositoryProvider = Provider((ref) => MoviesRepository(
       ref.watch(moviesRemoteDataSourceProvider),
       ref.read(categoriesDtoToCategoriesStateMapperProvider),
       ref.read(moviesDtoToMoviesStateMapperMapperProvider),
+      ref.read(categoriesLocalDataSourceImplProvider),
+      ref.read(categoriesBaseDtoToCategoriesStateMapperProvider),
+      ref.read(categoriesDtoToCategoriesBaseDtoMapperProvider),
     ));
 
 final getCategoriesUseCasesProvider = Provider(
